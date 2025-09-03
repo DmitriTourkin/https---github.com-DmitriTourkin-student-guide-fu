@@ -1,42 +1,166 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Основные стили */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'VK';
+  src: url(./fonts/VK_Sans_Display_Regular111.ttf);
+}
+
+body {
+  font-family: 'VK', sans-serif;
+}
+
+/* Header container */
+.header-container {
+  position: relative;
+  background-color: #457CFD;
+  color: white;
+  width: 100%;
+  min-height: 760px;
+  overflow: hidden;
+}
+
+/* Sticky Navbar - теперь внутри header-container */
+.navbarSticky {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 14px;
+  background-color: rgba(255, 249, 253, 0.3);
+  backdrop-filter: blur(10px);
+  min-height: 60.2px;
+  font-size: 23px;
+  border-radius: 14px;
+  box-shadow: 12px 19px 46px -32px rgba(34, 60, 80, 0.6);
+  width: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+/* Ссылки в Navbar */
+.link {
+  list-style: none;
   text-decoration: none;
+  color: #333; /* Изменил на темный цвет для контраста */
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.link:hover {
+  background-color: rgba(197, 227, 26, 0.2);
+  color: #000;
+}
+
+/* Контент header */
+.head-content {
+  position: relative;
+  z-index: 1;
+  padding: 120px 40px 40px 40px; /* Больше отступ сверху для Navbar */
+  text-align: center;
+}
+
+.page-topic {
+  font-size: 170px;
+  line-height: 216px;
+  line-height: 76%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-desciption {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tags-related {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.topic {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .page-topic {
+    font-size: 120px;
+    line-height: 140px;
   }
 }
+
+@media (max-width: 768px) {
+  .navbarSticky {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    min-height: auto;
+    font-size: 18px;
+    top: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .page-topic {
+    font-size: 80px;
+    line-height: 90px;
+    text-align: center;
+  }
+  
+  .page-desciption {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  
+  .head-content {
+    padding: 100px 20px 30px 20px;
+  }
+  
+  .tags-related {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-topic {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  
+  .navbarSticky {
+    font-size: 16px;
+    gap: 8px;
+  }
+  
+  .link {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+}
+
