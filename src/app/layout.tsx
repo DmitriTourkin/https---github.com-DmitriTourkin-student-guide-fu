@@ -13,7 +13,7 @@ export default function RootLayout({
       <body>
           <NavBar/>
           <div className={styles.overlay}></div>
-        <header className="">
+        <header>
           <PageHeader/>
         </header>
         <main className="main">

@@ -2,18 +2,21 @@
 
 import { usePathname } from 'next/navigation';
 import { getPageData } from '../../library/page-data';
+import styles from './PageHeader.module.css';
 
 export default function PageHeader() {
   const pathname = usePathname();
   const pageData = getPageData(pathname);
 
   return (
-    <div className="second">
-      <h1 className="page-topic">{pageData.title}</h1>
-      <p className="page-desciption">{pageData.description}</p>
-      <ul className="tags-related">
+    <div className={styles.second}>
+      <div className={styles.titleLimiter}>
+          <h1 className={styles.pageTopic}>{pageData.title}</h1>
+      </div>
+      <p className={styles.pageDescription}>{pageData.description}</p>
+      <ul className={styles.tagsRelated}>
         {pageData.topics.map(topic => (
-          <li key={topic} className="topic">{topic}</li>
+          <li key={topic} className={styles.topic}>{topic}</li>
         ))}
       </ul>
     </div>
