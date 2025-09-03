@@ -9,7 +9,7 @@ export default function NavBar() {
   const [ navOptions ] = useState(navBarData.pages);
 
   return (
-      <nav className="navbarSticky">
+      <nav className={styles.navigationBar}>
         {navOptions.map(item => (
           <Link className={styles.link}
             key={item.href}

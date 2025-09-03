@@ -18,9 +18,18 @@ body {
   font-family: 'VK', sans-serif;
 }
 
-/* Header container */
-.header-container {
-  position: relative;
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.second{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   background-color: #457CFD;
   color: white;
   width: 100%;
@@ -28,25 +37,6 @@ body {
   overflow: hidden;
 }
 
-/* Sticky Navbar - теперь внутри header-container */
-.navbarSticky {
-  position: sticky;
-  top: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 14px;
-  background-color: rgba(255, 249, 253, 0.3);
-  backdrop-filter: blur(10px);
-  min-height: 60.2px;
-  font-size: 23px;
-  border-radius: 14px;
-  box-shadow: 12px 19px 46px -32px rgba(34, 60, 80, 0.6);
-  width: calc(100% - 40px);
-  margin: 20px auto;
-}
 
 /* Ссылки в Navbar */
 .link {
@@ -57,19 +47,6 @@ body {
   padding: 8px 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
-}
-
-.link:hover {
-  background-color: rgba(197, 227, 26, 0.2);
-  color: #000;
-}
-
-/* Контент header */
-.head-content {
-  position: relative;
-  z-index: 1;
-  padding: 120px 40px 40px 40px; /* Больше отступ сверху для Navbar */
-  text-align: center;
 }
 
 .page-topic {

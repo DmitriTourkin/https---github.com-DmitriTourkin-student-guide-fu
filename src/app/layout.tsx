@@ -1,6 +1,7 @@
 import "./globals.css";
 import NavBar from "./components/navigation/Navigation/NavBar";
-import PageHeader from "./components/PageHeader";
+import PageHeader from "./components/PageHeader/PageHeader";
+import styles from './components/navigation/Navigation/Navigation.module.css';
 
 export default function RootLayout({
   children,
@@ -10,11 +11,14 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <div className="header-container">
           <NavBar/>
+          <div className={styles.overlay}></div>
+        <header className="">
           <PageHeader/>
-        </div>
-        {children}
+        </header>
+        <main className="main">
+          {children}
+        </main>
       </body>
     </html>
   );
